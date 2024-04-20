@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 15px 15px 15px 25px;
+      }
+      table {
+        border: 1px;
+        border-collapse: collapse;
+      }
+      h4 {
+        color: blue;
+      }
+      th {
+        color: red;
+      }
+      tr *:nth-child(1) {
+        text-align: center;
+        padding: 2px;
+      }
+      tr *:nth-child(2) {
+        text-align: left;
+        min-width: 300px;
+        padding: 2px;
+      }
+      tr *:nth-child(3),
+      tr *:nth-child(4),
+      tr *:nth-child(5) {
+        text-align: center;
+        min-width: 60px;
+        padding: 2px;
+      }
+      * {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+    </style>
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <h4>@{{bot_username}} orqali o'tkazilgan test natijalari.</h4>
+    <br />
+    <h4>Test kodi: {{order_num}}</h4>
+    <h4>Fan nomi: {{name}}</h4>
+    <h4>Savollar soni: {{right_answers_count}}</h4>
+    <h4>Test muallifi: {{creater}}</h4>
+    <table border="1">
+      <tr>
+        <th>T/r</th>
+        <th>Ism Familiya</th>
+        <th>Natija</th>
+        <th>Foiz</th>
+        <th>O'rin</th>
+      </tr>
+      {{#each players}}
+      <tr>
+        <td>{{this.order}}</td>
+        <td>{{this.fio}}</td>
+        <td>{{this.countRights}}</td>
+        <td>{{this.procent}} %</td>
+        <td>{{this.order}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </body>
+</html>
